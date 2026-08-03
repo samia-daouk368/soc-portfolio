@@ -22,6 +22,7 @@ This repository is my personal learning portfolio as I work toward a role as a S
 
 | Topic | Notes | Cheat Sheet |
 |---|---|---|
+| TryHackMe Cyber Security 101 (Modules 1-3) | [cybersecurity101-notes.md](cybersecurity101/cybersecurity101-notes.md) | [cybersecurity101-cheatsheet.md](cybersecurity101/cybersecurity101-cheatsheet.md) |
 | TryHackMe Pre Security (7 modules, 31 rooms) | [presecurity-notes.md](presecurity/presecurity-notes.md) | [presecurity-cheatsheet.md](presecurity/presecurity-cheatsheet.md) |
 | MyFirstHack Days 1-25 | [myfirsthack-days-1-25.md](myfirsthack/myfirsthack-days-1-25.md) | [myfirsthack-days-1-25-cheatsheet.md](myfirsthack/myfirsthack-days-1-25-cheatsheet.md) |
 | Active Directory Basics | [ad-basics.md](active-directory/ad-basics.md) | [ad-basics-cheatsheet.md](active-directory/ad-basics-cheatsheet.md) |
@@ -33,6 +34,9 @@ soc-portfolio/
 ├── active-directory/
 │   ├── ad-basics.md
 │   └── ad-basics-cheatsheet.md
+├── cybersecurity101/
+│   ├── cybersecurity101-notes.md
+│   └── cybersecurity101-cheatsheet.md
 ├── myfirsthack/
 │   ├── myfirsthack-days-1-25.md
 │   └── myfirsthack-days-1-25-cheatsheet.md
