@@ -1,4 +1,4 @@
-# Cyber Security 101 Cheat Sheet (Modules 1-3)
+# Cyber Security 101 Cheat Sheet (Modules 1-4)
 
 Quick reference companion to cybersecurity101-notes.md. Organized by module.
 
@@ -101,3 +101,67 @@ Quick reference companion to cybersecurity101-notes.md. Organized by module.
 • Kerberos — default modern ticket-based authentication (TGT from the KDC, then a TGS per service); NetNTLM — legacy challenge-response authentication protocol
 
 • Tree — domains sharing one namespace; Forest — multiple trees with different namespaces; Enterprise Admins — admin group with rights across the whole forest; Trust relationship (one-way or two-way) — allows users to access resources across domains
+
+## Module 4: Command Line
+
+• cmd.exe — default Windows command-line interpreter; append /? to almost any command to display its help page
+
+• set — show environment variables and the Path; ver — OS version; systeminfo — OS, host, processor and memory details; help — command help; cls — clear the screen
+
+• command | more — page long output (Spacebar = next page, CTRL+C = quit); more file.txt — display a text file
+
+• ipconfig / ipconfig /all — IP, subnet mask and gateway / plus physical (MAC) address, DHCP status, lease times and DNS servers
+
+• ping host — ICMP reachability test with round-trip times; tracert host — trace the routers on the path to a target; nslookup domain [nameserver] — resolve a domain
+
+• netstat — active connections and listening ports; netstat -abon — all (-a), owning program (-b), PID (-o), numeric (-n)
+
+• cd / cd target / cd .. — show, enter, or move up a directory; dir / dir /a / dir /s — list contents, include hidden and system files, recurse; tree — visual folder structure
+
+• mkdir, rmdir — create/remove directories; type — display a file; copy, move, del or erase — file operations; * — wildcard for multiple files (e.g. copy *.md C:\Markdown)
+
+• tasklist / tasklist /FI "imagename eq sshd.exe" — list processes with an optional filter; taskkill /PID 4567 — terminate a process by PID
+
+• chkdsk — check file systems and volumes for errors; driverquery — list installed device drivers; sfc /scannow — scan and repair system files
+
+• PowerShell — object-oriented shell, scripting language and configuration framework built on .NET; objects carry properties (data) and methods (actions), so output never needs text parsing
+
+• Cmdlets use a Verb-Noun naming convention, e.g. Get-Content, Set-Location, New-Item
+
+• Get-Command — list all available cmdlets/functions/aliases/scripts (filter with -CommandType "Function" or -Verb Remove); Get-Help cmdlet -examples — usage examples; Get-Alias — legacy command shortcuts (dir, cd, cat, echo)
+
+• Find-Module -Name "PowerShell*" / Install-Module -Name "PowerShellGet" — search and install modules from the PowerShell Gallery
+
+• Get-ChildItem (dir/ls), Set-Location (cd), New-Item -ItemType File|Directory, Remove-Item, Copy-Item, Move-Item, Get-Content (type/cat) — file and folder cmdlets
+
+• Pipe | passes objects, not text; Sort-Object Length — sort by a property; Where-Object -Property Extension -eq ".txt" — filter; Select-Object Name,Length — pick properties; Select-String -Path file -Pattern text — search inside files (grep/findstr, regex supported)
+
+• Comparison operators: -eq (equal), -ne (not equal), -gt / -ge (greater than / or equal), -lt / -le (less than / or equal), -like (wildcard match)
+
+• Get-ComputerInfo — full OS/hardware/BIOS snapshot (richer than systeminfo); Get-LocalUser — local accounts with status and description
+
+• Get-NetIPConfiguration — interfaces, IP, gateway, DNS; Get-NetIPAddress — every configured address, including inactive ones
+
+• Get-Process — running processes with CPU/memory; Get-Service — service status (spot anomalous services); Get-NetTCPConnection — active TCP connections, OwningProcess = the process behind the connection
+
+• Get-FileHash -Path file — file hash for integrity checks and malware triage; Get-Item -Path file -Stream * — list Alternate Data Streams (:$DATA is the normal NTFS stream, anything else is an ADS)
+
+• Invoke-Command -ComputerName Host -ScriptBlock { Get-Service } — run commands remotely; -FilePath script.ps1 — run a local script on a remote host
+
+• Shell — the facilitator between the user and the OS; Bash is the default shell on most Linux distributions
+
+• pwd, cd, ls, cat, grep "word" file — core Linux shell commands; history — list previously executed commands of the session
+
+• echo $SHELL — current shell; cat /etc/shells — installed shells; type a shell's name to switch for the session; chsh -s /usr/bin/zsh — change the default shell permanently
+
+• Bash (Bourne Again Shell) — widely used, best scripting compatibility, tab completion, history file; no syntax highlighting or spell correction
+
+• Fish (Friendly Interactive Shell) — most user-friendly, simple syntax, auto spell correction, built-in syntax highlighting, themes; limited scripting
+
+• Zsh (Z Shell) — advanced tab completion, auto spell correction, strong scripting, deep customisation via oh-my-zsh and plugins (syntax highlighting available); slower
+
+• #!/bin/bash — shebang declaring the interpreter; .sh — script file extension; # — comment
+
+• read var / $var — take and reference user input; for i in {1..10}; do ... done — loop; if [ ... ]; then ... elif ... else ... fi — conditional; && — require multiple conditions
+
+• chmod +x script.sh — grant execute permission; ./script.sh — run a script from the current directory (it is not in PATH); sudo su — become root
